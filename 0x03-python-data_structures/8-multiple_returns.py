@@ -5,6 +5,6 @@ def multiple_returns(sentence):
 
     if len_sentence == 0:
         result = (0, None)
-    else: 
-        _result = (len_sentence, sentence[:1])
-        return _result
+ 
+    _result = (len_sentence, sentence[0:1])
+    return _result
