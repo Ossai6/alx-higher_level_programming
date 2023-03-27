@@ -2,14 +2,14 @@
 
 """ a function that raises an exception
 
-    args: 
+    args:
 
     returns: Exception
 
     by Akpe Caleb
 
 """
- 
+
 
 def raise_exception():
     raise TypeError

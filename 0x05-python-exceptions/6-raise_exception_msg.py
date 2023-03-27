@@ -2,7 +2,7 @@
 
 """ a function that raises an exception with a message
 
-    args: 
+    args:
 
     returns: a message
 
@@ -10,5 +10,6 @@
 
 """
 
-def raise_exception_msg(message=""):
+
+def raiise_exception_msg(message=""):
     raise NameError(message)
