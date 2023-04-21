@@ -231,6 +231,7 @@ class TestSquare_x(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "x must be >= 0"):
             Square(5, -1, 0)
 
+
 class TestSquare_y(unittest.TestCase):
     """Unittests for testing initialization of Square y attribute."""
 
@@ -416,6 +417,7 @@ class TestSquare_stdout(unittest.TestCase):
         s = Square(3, 4, 5, 2)
         with self.assertRaises(TypeError):
             s.display(1)
+
 
 class TestSquare_update_args(unittest.TestCase):
     """Unittests for testing update args method of the Square class."""
