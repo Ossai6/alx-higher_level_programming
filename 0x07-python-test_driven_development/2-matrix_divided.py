@@ -1,15 +1,25 @@
+#!/usr/bin/python3
+"""This module contains the matrix_divided function"""
+
+
 def matrix_divided(matrix, div):
+    """ This function that divides all elements of a matrix
+    and returns a new matrix
+    """
+    error_msg = "matrix must be a matrix (list of lists) of integers/floats"
+    second_error_msg = "Each row of the matrix must have the same size"
+
     if type(matrix) is list:
         for item in matrix:
             if type(item) is not list:
-                raise TypeError("matrix must be a matrix (list of lists) of integers/floats")
+                raise TypeError(error_msg)
 
             for element in item:
                 if type(element) not in [int, float]:
-                    raise TypeError("matrix must be a matrix (list of lists) of integers/floats")
+                    raise TypeError(error_msg)
 
             if len(item) != len(matrix[0]):
-                raise TypeError("Each row of the matrix must have the same size")
+                raise TypeError(second_error_msg)
 
         if type(div) not in [int, float]:
             raise TypeError("div must be a number")
@@ -28,5 +38,4 @@ def matrix_divided(matrix, div):
         return new_matrix
 
     else:
-        raise TypeError("matrix must be a matrix (list of lists) of integers/floats")
-
+        raise TypeError(error_msg)
