@@ -9,6 +9,11 @@ class Rectangle:
     number_of_instances = 0
     print_symbol = "#"
 
+    @classmethod
+    def square(cls, size):
+        """returns a new Rectangle instance that is a square w/ h==w==size"""
+        return cls(size, size)
+
     def __init__(self, width=0, height=0):
         """Initializes the rectangle"""
         self.height = height
@@ -19,11 +24,6 @@ class Rectangle:
         """prints a message when an instance is deleted"""
         Rectangle.number_of_instances -= 1
         print("Bye rectangle...")
-
-    @classmethod
-    def square(cls, size):
-        """returns a new Rectangle instance that is a square w/ h==w==size"""
-        return cls(size, size)
 
     @staticmethod
     def bigger_or_equal(rect_1, rect_2):
