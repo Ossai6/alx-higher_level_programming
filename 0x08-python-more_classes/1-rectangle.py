@@ -4,7 +4,7 @@ This module contains the class Rectangle
 """
 
 
-class Rectangle():
+class Rectangle:
     """This class represents a rectangle"""
     def __init__(self, width=0, height=0):
         """initializes the rectangle"""
