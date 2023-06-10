@@ -8,7 +8,6 @@ class BaseGeometry:
     """
     This class contains the "area" method
     """
-
     def area(self):
         """
         raises an exception
