@@ -1,4 +1,9 @@
 #!/usr/bin/python3
+"""
+Contains the class BaseGeometry
+"""
+
+
 class BaseGeometry:
     """
     This class contains the "area" method
