@@ -1,9 +1,11 @@
 #!/usr/bin/python3
+"""This module contains the BaseGeometry class"""
+
+
 class BaseGeometry:
     """
     This class contains the "area" method
     """
-
     def area(self):
         """
         raises an exception
@@ -37,4 +39,4 @@ class Rectangle(BaseGeometry):
 
     def __str__(self):
         """returns the string representation of the object"""
-        return ("[Rectangle] {}/{}".format(self.__width, self.__height))
+        return ("[Rectangle] {:d}/{:d}".format(self.__width, self.__height))
