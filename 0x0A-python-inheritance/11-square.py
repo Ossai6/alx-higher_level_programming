@@ -3,6 +3,7 @@
     This module contains the class Rectangle and a subclass Square
 """
 
+
 Rectangle = __import__('9-rectangle').Rectangle
 
 
@@ -22,4 +23,4 @@ class Square(Rectangle):
 
     def __str__(self):
         """ returns the string representation of a square"""
-        return "[Square] {}/{}".format(self.__size, self.__size)
+        return "[Square] {:d}/{:d}".format(self.__size, self.__size)
