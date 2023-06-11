@@ -5,20 +5,14 @@ Contains the class BaseGeometry
 
 
 class BaseGeometry:
-    """
-    This class contains the "area" method
-    """
+    """A class with public instance methods area and integer_validator"""
     def area(self):
-        """
-        raises an exception
-        """
+        """raises an exception when called"""
         raise Exception("area() is not implemented")
 
     def integer_validator(self, name, value):
-        """
-        Validates the name and value argumentsa
-        """
+        """validates that value is an integer greater than 0"""
         if type(value) is not int:
             raise TypeError("{:s} must be an integer".format(name))
         if value <= 0:
-            raise ValueError("{:s} must be greater that 0".format(name))
+            raise ValueError("{:s} must be greater than 0".format(name))
