@@ -70,11 +70,12 @@ class Base:
         Args:
             **dictionary (dict): Key/value pairs of attributes to initialize.
         """
-        dummy_instance = cls(1, 1)
+        if dictionary and dictionary != {}:
+            dummy_instance = cls(1, 1)
 
-        dummy_instance.update(**dictionary)
+            dummy_instance.update(**dictionary)
 
-        return dummy_instance
+            return dummy_instance
 
     @classmethod
     def load_from_file(cls):
