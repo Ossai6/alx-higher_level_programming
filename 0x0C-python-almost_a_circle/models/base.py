@@ -30,7 +30,7 @@ class Base:
         """Return the JSON serialization of a list of dicts.
         Args:
             list_dictionaries (list): A list of dictionaries.
-        """m
+        """
         if list_dictionaries is None or list_dictionaries == []:
             return "[]"
         else:
