@@ -8,9 +8,14 @@ class Square(Rectangle):
     """
     This class represents a square
     """
+
     def __init__(self, size, x=0, y=0, id=None):
-        """
-        Instantiation of the square class
+        """Initialize a new Square.
+        Args:
+            size (int): The size of the new Square.
+            x (int): The x coordinate of the new Square.
+            y (int): The y coordinate of the new Square.
+            id (int): The identity of the new Square.
         """
         super().__init__(size, size, x, y, id)
 
@@ -52,19 +57,18 @@ class Square(Rectangle):
             for key, value in kwargs.items():
                 setattr(self, key, value)
 
+    def to_dictionary(self):
+        """Return the dictionary representation of the Square."""
+        return {
+            "id": self.id,
+            "size": self.width,
+            "x": self.x,
+            "y": self.y
+        }
+
     def __str__(self):
         """
         returns a string representation of an object
         """
-        return f"[Square] ({self.id}) {self.x}/{self.y} - {self.height}"
-
-    def to_dictionary(self):
-        """
-        returns a dictionary representation of a square object
-        """
-        return {
-            "id": self.id,
-            "x": self.x,
-            "size": self.size,
-            "y": self.y
-        }
+        return "[Square] ({}) {}/{} - {}".format(self.id, self.x, self.y,
+                                                 self.width)

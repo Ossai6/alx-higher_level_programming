@@ -33,6 +33,7 @@ class Rectangle(Base):
 
     @width.setter
     def width(self, value):
+        """Sets the width of the Rectangle."""
         if type(value) != int:
             raise TypeError("width must be an integer")
         if value <= 0:
@@ -46,6 +47,7 @@ class Rectangle(Base):
 
     @height.setter
     def height(self, value):
+        """Set/get the height of the Rectangle."""
         if type(value) != int:
             raise TypeError("height must be an integer")
         if value <= 0:
@@ -59,6 +61,7 @@ class Rectangle(Base):
 
     @x.setter
     def x(self, value):
+        """Set/get the x cordinate of the Rectangle."""
         if type(value) != int:
             raise TypeError("x must be an integer")
         if value < 0:
@@ -72,6 +75,7 @@ class Rectangle(Base):
 
     @y.setter
     def y(self, value):
+        """Set/get the y cordinate of the Rectangle."""
         if type(value) != int:
             raise TypeError("y must be an integer")
         if value < 0:
@@ -95,14 +99,15 @@ class Rectangle(Base):
             print("")
 
     def update(self, *args, **kwargs):
-        """
-        This function assigns an argument to each attribute:
-
-        1st argument should be the id attribute
-        2nd argument should be the width attribute
-        3rd argument should be the height attribute
-        4th argument should be the x attribute
-        5th argument should be the y attribute
+        """Update the Rectangle.
+        Args:
+            *args (ints): New attribute values.
+                - 1st argument represents id attribute
+                - 2nd argument represents width attribute
+                - 3rd argument represent height attribute
+                - 4th argument represents x attribute
+                - 5th argument represents y attribute
+            **kwargs (dict): New key/value pairs of attributes.
         """
         if args and len(args) != 0:
             if len(args) > 0:
@@ -119,6 +124,16 @@ class Rectangle(Base):
             for key, value in kwargs.items():
                 setattr(self, key, value)
 
+    def to_dictionary(self):
+        """Return the dictionary representation of a Rectangle."""
+        return {
+            "id": self.id,
+            "width": self.width,
+            "height": self.height,
+            "x": self.x,
+            "y": self.y
+        }
+
     def __str__(self):
         """
         Return the print() and str() representation of the Rectangle.
@@ -126,13 +141,3 @@ class Rectangle(Base):
         return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id,
                                                        self.x, self.y,
                                                        self.width, self.height)
-
-    def to_dictionary(self):
-        """Return the dictionary representation of a Rectangle."""
-        return {
-            "x": self.x,
-            "y": self.y,
-            "id": self.id,
-            "height": self.height,
-            "width": self.width
-        }
