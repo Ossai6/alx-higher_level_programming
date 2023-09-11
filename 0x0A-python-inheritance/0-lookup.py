@@ -8,4 +8,4 @@ def lookup(obj):
     """
     This function returns the available attributes and methods of a list object
     """
-    return(dir(obj))
+    return dir(obj)
