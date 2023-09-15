@@ -45,6 +45,8 @@ Check for reversed order list:
 	[2, 1, 0]
 	>>> ml.print_sorted()
 	[0, 1, 2]
+	>>> print(ml)
+	[2, 1, 0]
 
 Check for a negative number present:
 	>>> ml.append(-9)
@@ -53,6 +55,8 @@ Check for a negative number present:
 	[2, 1, 0, -9, 10]
 	>>> ml.print_sorted()
 	[-9, 0, 1, 2, 10]
+	>>> print(ml)
+	[2, 1, 0, -9, 10]
 
 Check for all negative numbers:
 	>>> ml = MyList()
@@ -64,6 +68,8 @@ Check for all negative numbers:
 	[-21, -5, -1, -7]
 	>>> ml.print_sorted()
 	[-21, -7, -5, -1]
+	>>> print(ml)
+	[-21, -5, -1, -7]
 
 Check for too many args:
 	>>> ml.print_sorted(1)
