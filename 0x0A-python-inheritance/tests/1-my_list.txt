@@ -24,7 +24,7 @@ Check that MyList inherits from list:
 
 Check for empty list:
 	>>> ml = MyList()
-	>>> print(ml)
+	>>> ml.print_sorted()
 	[]
 
 Check appending works:
