@@ -1,0 +1,71 @@
+import module:
+	>>> MyList = __import__("1-my_list").MyList
+
+Check for module docstring:
+	>>> m = __import__("1-my_list").__doc__
+	>>> len(m) > 1
+	True
+
+Check for class docstring:
+	>>> c = __import__("1-my_list").__doc__
+	>>> len(c) > 1
+	True
+
+Check for method docstring:
+	>>> met = __import__("1-my_list").__doc__
+	>>> len(met) > 1
+	True
+
+Check that MyList inherits from list:
+	>>> issubclass(MyList, list)
+	True
+
+Check for empty list:
+	>>> ml = MyList()
+	>>> print(ml)
+	[]
+
+Check appending works:
+	>>> ml.append(0)
+	>>> ml.append(1)
+	>>> ml.append(2)
+	>>> print(ml)
+	[0, 1, 2]
+
+Check for list in correct order:
+	>>> ml.print_sorted()
+	[0, 1, 2]
+
+Check for reversed order list:
+	>>> ml = MyList()
+	>>> ml.append(2)
+	>>> ml.append(1)
+	>>> ml.append(0)
+	>>> print(ml)
+	[2, 1, 0]
+	>>> ml.print_sorted()
+	[0, 1, 2]
+
+Check for a negative number present:
+	>>> ml.append(-9)
+	>>> ml.append(10)
+	>>> print(ml)
+	[2, 1, 0, -9, 10]
+	>>> ml.print_sorted()
+	[-9, 0, 1, 2, 10]
+
+Check for all negative numbers:
+	>>> ml = MyList()
+	>>> ml.append(-21)
+	>>> ml.append(-5)
+	>>> ml.append(-1)
+	>>> ml.append(-7)
+	>>> print(ml)
+	[-21, -5, -1, -7]
+	>>> ml.print_sorted()
+	[-21, -7, -5, -1]
+
+Check for too many args:
+	>>> ml.print_sorted(1)
+	Traceback (most recent call last):
+	TypeError: print_sorted() takes 1 positional argument but 2 were given
