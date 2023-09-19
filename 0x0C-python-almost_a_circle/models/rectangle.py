@@ -21,11 +21,11 @@ class Rectangle(Base):
             TypeError: If either of x or y is not an int.
             ValueError: If either of x or y < 0.
         """
+        super().__init__(id)
         self.width = width
         self.height = height
         self.x = x
         self.y = y
-        super().__init__(id)
 
     @property
     def width(self):
@@ -106,3 +106,38 @@ class Rectangle(Base):
         return "[{}] ({}) {}/{} - {}/{}".format(self.__class__.__name__,
                                                 self.id, self.__x, self.__y,
                                                 self.__width, self.__height)
+
+    def update(self, *args):
+        """
+        This is a function that assigns an argument
+        to each attribute:
+
+        1st argument should be the id attribute
+        2nd argument should be the width attribute
+        3rd argument should be the height attribute
+        4th argument should be the x attribute
+        5th argument should be the y attribute
+        """
+        if not args:
+            for key, value in kwargs.items():
+                self.__setattr__(key, value)
+        if len(args) == 1:
+            self.id = args[0]
+        elif len(args) == 2:
+            self.__id = args[0]
+            self.__width = args[1]
+        elif len(args) == 3:
+            self.__id = args[0]
+            self.__width = args[1]
+            self.__height = args[2]
+        elif len(args) == 4:
+            self.__id = args[0]
+            self.__width = args[1]
+            self.__height = args[2]
+            self.__x = args[3]
+        elif len(args) == 5:
+            self.__id = args[0]
+            self.__width = args[1]
+            self.__height = args[2]
+            self.__x = args[3]
+            self.__y = args[4]
