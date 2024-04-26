@@ -13,8 +13,7 @@ if __name__ == "__main__":
 
     states = cursor.fetchall()
 
-    for state in states:
-        print(list(state))
+    [print(state) for state in states]
 
     cursor.close()
     db.close()
