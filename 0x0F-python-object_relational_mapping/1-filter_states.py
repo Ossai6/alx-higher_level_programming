@@ -11,8 +11,7 @@ if __name__ == "__main__":
     cursor.execute("SELECT * FROM states ORDER BY states.id ASC")
     states = cursor.fetchall()
     for states_N in states:
-        if states_N[0] == "N":
+        if states_N.startwith("N"):
             print(states_N)
-    
     cursor.close()
     db.close()
