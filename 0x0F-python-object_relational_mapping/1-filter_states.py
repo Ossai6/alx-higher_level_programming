@@ -6,12 +6,12 @@ import MySQLdb
 
 if __name__ == "__main__":
     db = MySQLdb.connect(host="localhost", port=3306, username=sys.argv[1],
-                         password=sys.argv[2], db=sys.argv[3], charset="utf-8")
+                         password=sys.argv[2], database=sys.argv[3])
     cursor = db.cursor()
     cursor.execute("SELECT * FROM states ORDER BY states.id ASC")
     states = cursor.fetchall()
     for states_N in states:
-        if states_N.startwith("N"):
+        if states_N[0] == "N":
             print(states_N)
     cursor.close()
     db.close()
