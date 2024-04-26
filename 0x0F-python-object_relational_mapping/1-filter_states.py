@@ -4,11 +4,11 @@
 import sys
 import MySQLdb
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     db = MySQLdb.connect(host="localhost", port=3306, username=sys.argv[1],
                          password=sys.argv[2], database=sys.argv[3])
     cursor = db.cursor()
-    cursor.execute("SELECT * FROM states ORDER BY states.id ASC")
+    cursor.execute("SELECT * FROM `states` ORDER BY `id`")
     states = cursor.fetchall()
     for states_N in states:
         if states_N[0] == "N":
