@@ -10,6 +10,9 @@ if __name__ == "__main__":
     cursor = db.cursor()
     cursor.execute("SELECT * FROM states ORDER BY states.id ASC")
     states = cursor.fetchall()
-    [print(state) for state in states]
+    for states_N in states:
+        if states_N[0] == "N":
+            print(states_N)
+    
     cursor.close()
     db.close()
